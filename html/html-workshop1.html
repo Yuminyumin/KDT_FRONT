@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+
+    <link href="../css/workshop1.css" rel="stylesheet">
+</head>
+<body>
+    <h2>
+        사용자 정보 입력
+    </h2>
+    <div class="container-fluid">
+        <form>
+            <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" required>
+            </div>
+            <div class="form-group">
+                <label for="name">이름:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="password">암호:</label>
+                <input type="text" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="address">주소:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">전화번호:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="hint">본인확인 힌트:</label>
+                <select name="hint">
+                    <option value="from">태어난 고향은?</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="answer">본인확인 답변:</label>
+                <input type="text" id="answer" name="answer" required>
+            </div>
+            <div class="form-group checkbox-group" id="marriage">
+                <label>결혼 여부:</label>
+                <input type="radio" id="married" name="marriage" value="기혼" required>
+                <label for="married">기혼</label>
+                <input type="radio" id="single" name="marriage" value="미혼" required>
+                <label for="single">미혼</label>
+            </div>
+            <div class="form-group checkbox-group" id="hobby">
+                <label>취미:</label>
+                <input type="radio" id="computer" name="hobby" value="컴퓨터" required>
+                <label for="married">컴퓨터</label>
+                <input type="radio" id="culture" name="hobby" value="문화" required>
+                <label for="single">문화</label>
+                <input type="radio" id="sports" name="hobby" value="스포츠" required>
+                <label for="single">스포츠</label>
+                <input type="radio" id="etc" name="hobby" value="기타" required>
+                <label for="single">기타</label>
+            </div>
+            <div class="form-group ">
+                <label for="note">비고:</label>
+                <textarea type="text" id="note" name="note" required></textarea>
+            </div>
+            <button type="submit">작성 완료</button>
+            <button type="reset">다시 쓰기</button>
+        </form>
+    </div>
+</body>
+</html>
