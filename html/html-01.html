@@ -11,22 +11,9 @@
 
     <!-- external style-->
         <link rel="stylesheet" href="../css/test.css">
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
-    <!-- comment-->
-    <!--
-    - html
-    : 웹 페이지의 구조(tag 형식으로 이루어짐)
-    : tag 구성 : tag(속성을 가짐)와 text로 이루어짐
-    - css
-    : 웹 페이지의 표현을 담당
-    : inline style: 태그에 직접 스타일 적용
-    : internal style(선택자 - 태그, 아이디, 클래스): 페이지 내부에 <style> 태그를 이용해서 적용
-    : external style: .css 파일을 만들고 <link> 태그를 이용해서 적용
-    - javaScript
-    : 웹 페이지에서 클라이언트의 요청을 처리하는 역할
-    : DOM(Document Object Model)
-    -->
     <div align="center">
         Hyper Text Markup Language 기본 태그를 사용하여 작성한 템플릿입니다.
     </div>
@@ -34,5 +21,34 @@
     <div id="parent">
         <div class="child">box01</div>
     </div>
+    <br>
+    <div>
+        <label for="agree">동의하시겠습니까?
+            <input type="checkbox" name="agree" id="agree" value="동의">
+        </label>
+        <button id="agreeBtn">Send</button>
+        <span id="Result"></span>
+    </div>
+
+    <script>
+        window.onload = function(){
+            //window.alert("사이트에 오신것을 환영합니다~~");
+        }
+
+        $(document).ready(function(){
+           $("#agreeBtn").click(function(){
+            var onOff = $("#agree");
+            console.log("onOff >>>>>>>>>",onOff);
+            console.log("onOff >>>>>>>>>",onOff.is(":checked"));
+            if(onOff.is(":checked")){
+                window.alert("동의하셨습니다.");
+                $("Result").html("동의하셨습니다.");
+            } else{
+                window.alert("미동의하셨습니다.");
+                $("Result").html("미동의하셨습니다.");
+            }
+           });
+        });
+    </script>
 </body>
 </html>
