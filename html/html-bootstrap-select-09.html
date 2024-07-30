@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+    <select class="form-select"
+            aria-label="Default select example"
+            id="menu">
+        <option selected>Open this select menu</option>
+        <option value="냉모밀">냉모밀</option>
+        <option value="짜장면">짜장면</option>
+        <option value="닭가슴살">닭가슴살</option>
+      </select>
+
+      <script>
+
+        $(document).ready(function(){
+            $("#menu").change(function(){
+                var menu = $(this).val();
+                console.log("당신이 선택한 메뉴는 - ",menu,"입니다.");
+            });
+        });
+      </script>
+</body>
+</html>
