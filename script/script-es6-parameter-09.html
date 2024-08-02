@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    함수 정의시 기본값 매개변수 정의할 수 있다.
+    -->
+    매개변수의 기본값을 설정
+    <script>
+        function kdt(param01 =1, param02 = {}, param03 = 'kdt'){
+            console.log(param01, param02, param03);
+        }
+        kdt();
+        kdt(50, {name : 'jslim'}, 'multicampus');
+        kdt(50, {name : 'jslim'}, null);
+        kdt(50, {name : 'jslim'});
+
+        console.log("||를 이용한 기본값 할당");
+        function perInfo(height, weight, age){
+            var height = height || 180;
+            var weight = weight || 78;
+            var age    = age    || 30;
+            console.log(height, weight, age);
+        }
+        perInfo(178, 76, 20);
+        perInfo(178, 76, null);
+
+        console.log("");
+        console.log("Optional Chainning - 객체속성값의 유효성을 체크할 수 있음");
+        console.log("Optional Chainning - 평가의 대상은 null, undefined");
+        console.log("Optional Chainning - ?.");
+        console.log("널 병합 연산자(??) 같이 활용할 수 있음");
+
+        const userInfo = {
+            name : {
+                firstName : 'JeongSeop',
+                lastName  : 'Lim'
+            },
+            address : {
+                city     : 'Seoul',
+                postCode : 'XXXXX'
+            },
+            getUserInfo:()=>userInfo
+        };
+
+        var postCode = userInfo.address && userInfo.address.postCode;
+        console.log("postCode >>> ", postCode);
+
+        console.log("옵셔널 체이닝이 추가 된 후 >>> ");
+        var postCode = userInfo.address?.postCode;
+        console.log("postCode >>> ", postCode);
+
+        console.log(userInfo.getUserInfo());
+        console.log(userInfo.getUserInfo?.());
+        const key = 'city';
+        console.log(userInfo.address?.[key]);
+
+        const city = userInfo.address?.city ?? 'Gwangju';
+        console.log("city - ", city);
+    </script>
+</body>
+</html>

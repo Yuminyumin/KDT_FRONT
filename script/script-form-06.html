@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+    <h2> input 요소의 값을 취득 </h2>
+    <form>
+        <label for="subject">Content</label>
+        <input type="text" name="subject" id="subject">
+        <button id="saveBtn" type="button">SAVE</button>
+    </form>
+
+    <script>
+        $(document).ready(function(){
+            $("#saveBtn").click(function(){
+                let subject = $("#subject").val();
+                console.log("input value, ", subject);
+            })
+        });
+        
+        // window.onload = function(){
+        //     document.getElementById('saveBtn').onclick = function(){
+        //         window.alert("button click");
+        //         console.log("input value, ", subject);
+        //     }
+        // }
+
+        $("agreeBtn").click(function(){
+            var onOff = $("#agree");
+            consol.log("onOff >>>>>>>", onOff);
+            consol.log("onOff >>>>>>>", onOff.is(":checked"));
+            if(onOff.is("checked")){
+                $("#Result").html("<font color='red'>동의하셨습니다.</font>");
+            } else {
+                $("#Result").text("<font color='red'>미동의하셨습니다.</font>");
+            }
+        });
+
+        document.getElementById('chkBtn').onclick = function() {
+                let todos = document.getElementsByName("todo") ;
+                console.log("todos type , " , typeof todos ); 
+                cnt = 0 ; 
+                let selected = [] ; 
+                for(let idx = 0 ; idx < todos.length ; idx++) {
+                    if( todos[idx].checked ) {
+                        cnt++;
+                        selected.push(todos[idx].value);
+                        console.log(`당신이 선택한 주말 일정은 : ${todos[idx].value} 입니다.`);
+                    } 
+                }
+                if(cnt == 0) {
+                    document.querySelector('#chk_result').innerHTML = `당신이 선택한 주말 일정은 없습니다.`;
+                } else {
+                    document.querySelector('#chk_result').innerHTML = `당신이 선택한 주말 일정은 ${selected.toString()} 입니다.`;
+                }
+            }
+        
+
+        
+    </script>
+</body>
+</html>

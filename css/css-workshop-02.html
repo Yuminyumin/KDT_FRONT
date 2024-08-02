@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 실습1</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        #header{
+            background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, purple);
+            border-radius: 15px;
+            width: 300px;
+            color: white;
+            margin : auto;
+        }
+        #header > h1 > span{
+            color: blue;
+        }
+        .img_div img{
+            width:200px;
+            height: 200px;
+            border-radius: 10px;
+            margin: 5px;
+            box-shadow: 5px 5px pink;
+
+        }
+        img:hover{
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><span>날씨</span>의 종류</h1>
+    </header>
+    <hr>
+    <div class="img_div">
+        <img src="../assert/img/해.jpg" alt="해">
+        <img src="../assert/img/비구름.jpg" alt="비구름">
+        <img src="../assert/img/구름.jpg" alt="구름">
+    </div>
+    <div class="img_div">
+        <img src="../assert/img/해구름.jpg" alt="해구름">
+        <img src="../assert/img/눈.jpg" alt="눈">
+        <img src="../assert/img/흐림.jpg" alt="흐림">
+    </div>
+</body>
+</html>
